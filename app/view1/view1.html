@@ -1,37 +1,41 @@
-<section class="search">
-  <input type="text" class="search-box" ng-model="query">
-  <div class="filter">
-    <span>sorted by</span>
-    <span>Newest</span>
-    <span><img src="images/dropdown_arrow.png"></span>
-  </div>
-</section>
+<div class="wrapper">
 
-<section class="song-list">
-  <p>TRENDING</p>
-  <article ng-repeat="song in songs | filter: query" class="song">
-    <img src="{{ song.smallThumb.url }}" alt="{{ song.smallThumb.name }}" />
-    <p class="song-title">
-      {{ song.artist.name }}
-      <br>
-      {{ song.title }}
-    </p>
-    <div class="metadata">
-      <span class="metadatum">
-        Difficulty
-        <br>
-        {{ song.difficulty }}
-      </span>
-      <span class="metadatum">
-        Time Signature
-        <br>
-        {{ song.metaData.timeSignature.numerator }} / {{ song.metaData.timeSignature.denominator }}
-      </span>
-      <span class="metadatum">
-        Length
-        <br>
-        {{ song.metaData.totalTime }}
-      </span>
+  <section class="search">
+    <input type="text" class="search-box" ng-model="query">
+    <div class="filter">
+      <span>sorted by</span>
+      <span>Newest</span>
+      <span><img src="images/dropdown_arrow.png"></span>
     </div>
-  </article>
-</section>
+  </section>
+
+  <section class="song-list">
+    <p>TRENDING</p>
+    <article ng-repeat="song in songs | filter: query" class="song">
+      <img class="song-thumbnail" src="{{ song.smallThumb.url }}" alt="{{ song.smallThumb.name }}" />
+      <p class="song-data">
+        <span class="artist-name">{{ song.artist.name }}</span>
+        <br>
+        <span class="song-title"><strong>{{ song.title }}</strong></span>
+      </p>
+      <div class="metadata">
+        <span class="metadatum">
+          <strong>Difficulty</strong>
+          <br>
+          {{ song.difficulty }}
+        </span>
+        <span class="metadatum">
+          <strong>Time Signature</strong>
+          <br>
+          {{ song.metaData.timeSignature.numerator }} / {{ song.metaData.timeSignature.denominator }}
+        </span>
+        <span class="metadatum">
+          <strong>Length</strong>
+          <br>
+          {{ song.metaData.totalTime | number: 2 }}
+        </span>
+      </div>
+    </article>
+  </section>
+
+</div>
