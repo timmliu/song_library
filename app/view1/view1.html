@@ -1,2 +1,37 @@
-<p>This is the partial for view 1.</p>
-<p>teTESTINGGGG</p>
+<section class="search">
+  <input type="text" class="search-box" ng-model="query">
+  <div class="filter">
+    <span>sorted by</span>
+    <span>Newest</span>
+    <span><img src="images/dropdown_arrow.png"></span>
+  </div>
+</section>
+
+<section class="song-list">
+  <p>TRENDING</p>
+  <article ng-repeat="song in songs | filter: query" class="song">
+    <img src="{{ song.smallThumb.url }}" alt="{{ song.smallThumb.name }}" />
+    <p class="song-title">
+      {{ song.artist.name }}
+      <br>
+      {{ song.title }}
+    </p>
+    <div class="metadata">
+      <span class="metadatum">
+        Difficulty
+        <br>
+        {{ song.difficulty }}
+      </span>
+      <span class="metadatum">
+        Time Signature
+        <br>
+        {{ song.metaData.timeSignature.numerator }} / {{ song.metaData.timeSignature.denominator }}
+      </span>
+      <span class="metadatum">
+        Length
+        <br>
+        {{ song.metaData.totalTime }}
+      </span>
+    </div>
+  </article>
+</section>
