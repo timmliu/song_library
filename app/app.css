@@ -92,6 +92,18 @@ body {
   width: 50%;
 }
 
+@media screen and (min-width: 667px) {
+  .song {
+    width: 33%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .song {
+    width: 25%;
+  }
+}
+
 .song-thumbnail-gradient {
   position: relative;
   display: block;
