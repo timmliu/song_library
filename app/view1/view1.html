@@ -4,14 +4,18 @@
     <input type="text" class="search-box" ng-model="query">
     <div class="filter">
       <span>sorted by</span>
-      <span>Newest</span>
+      <select name="sort-by" ng-model="sortBy">
+        <option value="createdAt">Newest</option>
+        <option value="difficultyId">Easiest</option>
+        <option value="-difficultyId">Hardest</option>
+      </select>
       <span><img src="images/dropdown_arrow.png"></span>
     </div>
   </section>
 
   <section class="song-list">
     <p>TRENDING</p>
-    <article ng-repeat="song in songs | filter: query" class="song">
+    <article ng-repeat="song in songs | filter: query | orderBy: sortBy" class="song">
       <img class="song-thumbnail" src="{{ song.smallThumb.url }}" alt="{{ song.smallThumb.name }}" />
       <p class="song-data">
         <span class="artist-name">{{ song.artist.name }}</span>
