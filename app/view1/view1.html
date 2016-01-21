@@ -5,14 +5,13 @@
     <input type="text" class="search-box" ng-model="query" placeholder="Search">
     <div class="filter">
       <span id="sorted-by">sorted by</span>
-      <form>
+      <form class="sort-form">
         <select id="sortBy" name="sortBy" ng-model="sortBy">
           <option value="createdAt" id="newest">Newest</option>
           <option value="difficultyId" id="easiest">Easiest</option>
           <option value="-difficultyId" id="hardest">Hardest</option>
         </select>
       </form>
-      <span><img src="images/dropdown_arrow.png"></span>
     </div>
   </section>
 

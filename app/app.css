@@ -77,10 +77,19 @@ body {
   font-size: 0.65rem;
   font-weight: 200;
   letter-spacing: 1px;
+  position: relative;
+  top: 10px;
+}
+
+.sort-form {
+  position: relative;
+  left: 60px;
+  top: -10px;
 }
 
 /* song list */
 .trending-title {
+  clear: both;
   color: rgb(180,180,180);
   font-size: 0.6rem;
   margin-left: 5px;
