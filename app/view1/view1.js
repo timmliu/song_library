@@ -10,6 +10,8 @@ angular.module('myApp.view1', ['ngRoute'])
 }])
 
 .controller('View1Ctrl', ['$scope', function($scope, songFactory) {
+  $scope.sortBy = 'createdAt';
+
   $scope.songs = [
       {
           "active": 1,
