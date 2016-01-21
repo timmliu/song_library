@@ -179,7 +179,7 @@ dropdown > div {
 
 dropdown > div > div.dropdown-display {
   float: left;
-  width: 100%;
+  width: 70%;
   height: 40px;
   cursor: pointer;
   box-sizing: border-box;
@@ -237,7 +237,7 @@ dropdown > div > div.dropdown-list > div {
 dropdown > div > div.dropdown-list > div > div {
   color: #999;
   float: left;
-  width: 100%;
+  width: 70%;
   padding: 0 10px;
   font-size: 14px;
   box-sizing: border-box;

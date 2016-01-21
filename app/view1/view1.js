@@ -15,7 +15,6 @@ var app = angular.module('myApp.view1', ['ngRoute'])
     { name: 'Easiest', value: 'difficultyId' },
     { name: 'Hardest', value: '-difficultyId' }
   ];
-  $scope.sortOption = ''
   $scope.sortBy = 'createdAt';
 
   $scope.songs = [
