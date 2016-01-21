@@ -98,14 +98,14 @@ body {
 }
 
 .song-thumbnail-gradient::before {
-  content: '';
-  position: absolute;
-  left: 2.5%;
+  background: linear-gradient(to bottom,rgba(230,230,230,0.3), #000) repeat left top;
   bottom: 0px;
+  content: '';
+  height: 100%;
+  left: 2.5%;
+  position: absolute;
   right: 0;
-  height: 50%;
   width: 95%;
-  background: linear-gradient(to bottom,rgba(255,255,255,0), #000) repeat left top;
 }
 
 .song .song-thumbnail {
@@ -120,17 +120,19 @@ body {
 
 .song-data .artist-name, .song-data .song-title {
   color: white;
+  font-weight: 200;
   position: relative;
   left: 15px;
-  top: -70px;
 }
 
 .song-data .artist-name {
   font-size: 0.5rem;
+  top: -64px;
 }
 
 .song-data .song-title {
   font-size: 0.8rem;
+  top: -70px;
 }
 
 .metadata {
