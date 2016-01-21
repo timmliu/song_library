@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute'])
+var app = angular.module('myApp.view1', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
@@ -9,7 +9,13 @@ angular.module('myApp.view1', ['ngRoute'])
   });
 }])
 
-.controller('View1Ctrl', ['$scope', function($scope, songFactory) {
+.controller('View1Ctrl', ['$scope', function($scope) {
+  $scope.sortOptions = [
+    { name: 'Newest', value: 'createdAt' },
+    { name: 'Easiest', value: 'difficultyId' },
+    { name: 'Hardest', value: '-difficultyId' }
+  ];
+  $scope.sortOption = ''
   $scope.sortBy = 'createdAt';
 
   $scope.songs = [
@@ -757,3 +763,39 @@ angular.module('myApp.view1', ['ngRoute'])
       }
   ]
 }]);
+
+app.directive('dropdown', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'directives/dropdown.html',
+    scope: {
+      placeholder: '@',
+      list: '=',
+      selected: '=',
+      property: '@'
+    },
+    link: function(scope) {
+      scope.listVisible = false;
+      scope.isPlaceholder = false;
+
+      scope.select = function(item) {
+        scope.toggle();
+        scope.isPlaceholder = false;
+        scope.selected = item;
+      };
+
+      scope.isSelected = function(item) {
+        return item[scope.property] === scope.selected[scope.property];
+      };
+
+      scope.toggle = function() {
+        scope.listVisible = !scope.listVisible;
+      };
+
+      scope.$watch('selected', function() {
+        scope.isPlaceholder = scope.selected[scope.property] === undefined;
+        scope.display = scope.selected[scope.property];
+      });
+    }
+  };
+});

@@ -77,6 +77,8 @@ body {
   font-size: 0.65rem;
   font-weight: 200;
   letter-spacing: 1px;
+  position: relative;
+  top: 10px;
 }
 
 /* song list */
@@ -160,4 +162,132 @@ body {
 
 .metadatum {
   display: table-cell;
+}
+
+/* dropdown */
+dropdown {
+  position: relative;
+  z-index: 50;
+  top: -20px;
+  left: 50px;
+}
+
+dropdown > div {
+  float: left;
+  width: 100%;
+}
+
+dropdown > div > div.dropdown-display {
+  float: left;
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+dropdown > div > div.dropdown-display > * {
+  float: left;
+  height: 100%;
+  height: 40px;
+  line-height: 40px !important;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+dropdown > div > div.dropdown-display > span {
+  color: #999;
+  font-size: 14px;
+  width: 135px;
+  position: relative;
+  box-sizing: border-box;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+dropdown > div > div.dropdown-display > span.placeholder {
+  color: #AAA;
+}
+
+dropdown > div > div.dropdown-display > i {
+  position: relative;
+  width: 14px;
+  margin-left: -24px;
+  font-size: 1.125em;
+  font-weight: bold;
+  padding-right: 10px;
+  text-align: right;
+}
+
+dropdown > div > div.dropdown-list {
+  float: left;
+  position: relative;
+  width: 100%;
+  transform: scale(1, 0);
+  transition: transform ease 250ms;
+}
+
+dropdown > div > div.dropdown-list > div {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  cursor: pointer;
+  background: white;
+}
+
+dropdown > div > div.dropdown-list > div > div {
+  color: #999;
+  float: left;
+  width: 100%;
+  padding: 0 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+  border: solid 1px #DDD;
+  border-top: none;
+}
+
+dropdown > div > div.dropdown-list > div > div:hover {
+  background: #F0F0F0;
+}
+
+dropdown > div > div.dropdown-list > div > div.selected {
+  background: #999;
+  color: white;
+}
+
+dropdown > div > div.dropdown-list > div > div > * {
+  height: 40px;
+  line-height: 40px !important;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+dropdown > div > div.dropdown-list > div > div > span {
+  float: left;
+  width: 100%;
+  position: relative;
+  padding-right: 10px;
+  box-sizing: border-box;
+  color: inherit;
+}
+
+dropdown > div > div.dropdown-list > div > div > i {
+  float: left;
+  width: 20px;
+  margin-left: -20px;
+  display: none;
+}
+
+dropdown > div > div.dropdown-list > div > div.selected > i {
+  display: inline-block;
+}
+
+dropdown > div.show > div.dropdown-list {
+  transform: scale(1, 1);
+}
+
+.dropdown-container .fa-angle-down {
+  color: rgb(220,220,220);
+  font-size: 2rem;
+  font-weight: 100;
+  margin-left: -70px;
 }
