@@ -33,9 +33,42 @@
   padding: 0;
 }
 
-/* song list */
-.song-list {
+/* search */
+.search {
+  padding: 2%;
+}
 
+.search-icon-wrapper {
+  position: absolute;
+}
+
+.fa-search {
+  color: rgb(240,240,240);
+  position: relative;
+  left: 15px;
+  top: 10px;
+}
+
+.search-box {
+  border-radius: 0;
+  border: 2px solid rgb(240,240,240);
+  color: rgb(200,200,200);
+  float: left;
+  height: 40px;
+  outline: none;
+  padding: 0px 35px;
+  width: 30%;
+}
+
+.filter {
+  margin-left: 60%;
+}
+
+/* song list */
+.trending-title {
+  color: rgb(180,180,180);
+  font-size: 0.6rem;
+  margin-left: 5px;
 }
 
 .song {
@@ -43,10 +76,45 @@
   width: 50%;
 }
 
-.song-thumbnail {
+.song-thumbnail-gradient {
+  position: relative;
+  display: block;
+}
+
+.song-thumbnail-gradient::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  bottom: 0px;
+  right: 0;
+  height: 50%;
+  width: 95%;
+  background: linear-gradient(to bottom,rgba(255,255,255,0), #000) repeat left top;
+}
+
+.song .song-thumbnail {
   height: 95%;
   padding-left: 2.5%;
   width: 95%;
+}
+
+.song-data {
+  position: absolute;
+}
+
+.song-data .artist-name, .song-data .song-title {
+  color: white;
+  position: relative;
+  left: 15px;
+  top: -70px;
+}
+
+.song-data .artist-name {
+  font-size: 0.5rem;
+}
+
+.song-data .song-title {
+  font-size: 0.8rem;
 }
 
 .metadata {

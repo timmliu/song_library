@@ -1,7 +1,8 @@
 <div class="wrapper">
 
   <section class="search">
-    <input type="text" class="search-box" ng-model="query">
+    <div class="search-icon-wrapper"><i class="fa fa-search"></i></div>
+    <input type="text" class="search-box" ng-model="query" placeholder="Search">
     <div class="filter">
       <span>sorted by</span>
       <form>
@@ -16,13 +17,15 @@
   </section>
 
   <section class="song-list">
-    <p>TRENDING</p>
+    <p class='trending-title'>TRENDING</p>
     <article ng-repeat="song in songs | filter: query | orderBy: sortBy" class="song">
-      <img class="song-thumbnail" src="{{ song.smallThumb.url }}" alt="{{ song.smallThumb.name }}" />
+      <div class="song-thumbnail-gradient">
+        <img class="song-thumbnail" src="{{ song.smallThumb.url }}" alt="{{ song.smallThumb.name }}" />
+      </div>
       <p class="song-data">
         <span class="artist-name">{{ song.artist.name }}</span>
         <br>
-        <span class="song-title"><strong>{{ song.title }}</strong></span>
+        <span class="song-title">{{ song.title }}</span>
       </p>
       <div class="metadata">
         <span class="metadatum">
