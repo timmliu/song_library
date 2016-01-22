@@ -15,7 +15,15 @@ var app = angular.module('myApp.view1', ['ngRoute'])
     { name: 'Easiest', value: 'difficultyId' },
     { name: 'Hardest', value: '-difficultyId' }
   ];
-  $scope.sortBy = 'createdAt';
+  $scope.initialSortValue = 'createdAt';
+  $scope.sortValue = 'createdAt';
+  $scope.sortBy = function(value) {
+    if (!!value) {
+      $scope.sortValue = value;
+    } else {
+      $scope.sortValue = 'createdAt';
+    }
+  };
 
   $scope.songs = [
       {
@@ -781,6 +789,8 @@ app.directive('dropdown', function() {
         scope.toggle();
         scope.isPlaceholder = false;
         scope.selected = item;
+        scope.$parent.sortBy(scope.selected.value);
+        return scope.selected;
       };
 
       scope.isSelected = function(item) {

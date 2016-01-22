@@ -83,6 +83,7 @@ body {
 
 /* song list */
 .trending-title {
+  clear: both;
   color: rgb(180,180,180);
   font-size: 0.6rem;
   margin-left: 5px;

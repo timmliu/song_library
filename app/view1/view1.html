@@ -5,13 +5,13 @@
     <input type="text" class="search-box" ng-model="query" placeholder="Search">
     <div class="filter">
       <span id="sorted-by">sorted by</span>
-      <dropdown placeholder="Newest" list="sortOptions" selected="sortBy" property="name"></dropdown>
+      <dropdown id="sortDropdown" placeholder="Newest" list="sortOptions" selected="initialSortValue" property="name"></dropdown>
     </div>
   </section>
 
   <section class="song-list">
     <p class='trending-title'>TRENDING</p>
-    <article ng-repeat="song in songs | filter: query | orderBy: sortBy" class="song">
+    <article ng-repeat="song in songs | filter: query | orderBy: sortValue" class="song">
       <div class="song-thumbnail-gradient">
         <img class="song-thumbnail" src="{{ song.smallThumb.url }}" alt="{{ song.smallThumb.name }}" />
       </div>
