@@ -39,8 +39,9 @@ body {
 
 /* search */
 .search {
+  height: 50px;
   margin-top: 2%;
-  padding: 2%;
+  padding: 1%;
 }
 
 .search-icon-wrapper {
@@ -69,7 +70,16 @@ body {
 }
 
 .filter {
-  margin-left: 60%;
+  margin-right: 2.5%;
+  position: absolute;
+  right: 0%;
+}
+
+@media screen and (max-width: 320px) {
+  .filter {
+    clear: both;
+    position: relative;
+  }
 }
 
 .filter #sorted-by {
@@ -180,7 +190,7 @@ dropdown > div {
 
 dropdown > div > div.dropdown-display {
   float: left;
-  width: 70%;
+  width: 95px;
   height: 40px;
   cursor: pointer;
   box-sizing: border-box;
@@ -229,16 +239,16 @@ dropdown > div > div.dropdown-list {
 
 dropdown > div > div.dropdown-list > div {
   position: absolute;
-  width: 100%;
   z-index: 2;
   cursor: pointer;
   background: white;
 }
 
 dropdown > div > div.dropdown-list > div > div {
+  clear: both;
   color: #999;
   float: left;
-  width: 70%;
+  width: 95px;
   padding: 0 10px;
   font-size: 14px;
   box-sizing: border-box;
